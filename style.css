@@ -1,0 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+  --font-color: #323238;
+  --BtnBg-color: #e1e1e6;
+  --BgDark-color: #121214;
+  --BtnBg-colorActive: #02799d;
+  --color-CardsDark: #c4c4cc;
+  --Bgcolor-CardsDark: #29292e;
+  --BgcolorActive-CardsDark: #0a3442;
+  --Slide-color: #323238;
+}
+body {
+  font-size: 1.6rem;
+  color: var(--font-color);
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  width: 82.1rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.6rem;
+}
+
+/* Parte direita, que contem o relogio e os botões */
+#timer_Display {
+  display: flex;
+  flex-direction: column;
+  max-width: 32.1rem;
+  gap: 2rem;
+}
+#timer {
+  display: flex;
+}
+
+.controlls {
+  display: flex;
+  gap: 4rem;
+  height: fit-content;
+}
+
+#stopBtn,
+#addTime,
+#removeTime {
+  display: flex;
+  cursor: pointer;
+}
+
+#playBtn {
+  cursor: pointer;
+  display: flex;
+  transition: 0.2s;
+}
+#pauseBtn {
+  cursor: pointer;
+  display: none;
+}
+
+/* Botões de sons ambiente */
+
+.cardsBtn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3.2rem;
+}
+.florestSound,
+.rainSound,
+.coffeSound,
+.fireSound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  cursor: pointer;
+  justify-content: center;
+  background-color: var(--BtnBg-color);
+  padding: 3rem 2.4rem;
+  border-radius: 2.4rem;
+  transition: 0.2s;
+}
+
+.activeIcon svg path {
+  fill: white;
+}
+.activeIcon {
+  background-color: var(--BtnBg-colorActive);
+}
+.activeIconControll svg path,
+#playBtn:hover svg path,
+#pauseBtn:hover svg path,
+#stopBtn:hover svg path,
+#addTime:hover svg path,
+#removeTime:hover svg path {
+  fill: var(--BtnBg-colorActive);
+}
+
+.displayMode {
+  position: absolute;
+  right: 0;
+  margin: 5rem 6rem;
+  cursor: pointer;
+}
+
+.darkMode {
+  background-color: var(--BgDark-color);
+  color: #fff;
+}
+.BtnDarkMode svg path {
+  fill: var(--BtnBg-color);
+}
+.ligthModeBtn {
+  display: block;
+}
+.darkModeBtn {
+  display: none;
+}
+.activeIconDark {
+  background-color: var(--Bgcolor-CardsDark);
+}
+.activeIconDark svg path {
+  fill: var(--color-CardsDark);
+}
+.activeIconDarkClicked {
+  background-color: var(--BgcolorActive-CardsDark);
+}
+.volume-slider {
+  -webkit-appearance: none;
+  width: 9rem;
+  height: 0.4rem;
+  background: var(--Slide-color);
+  outline: none;
+  border-radius: 0.4rem;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: var(--Slide-color);
+  margin-top: -0.58rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 1.6rem;
+  height: 1.6rem;
+  background: var(--Slide-color);
+  margin-top: -0.58rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.volume-slider::-webkit-slider-runnable-track {
+  width: 9rem;
+  height: 0.4rem;
+  background: var(--Slide-color);
+  border-radius: 5px;
+}
+
+.volume-slider::-moz-range-track {
+  width: 9rem;
+  height: 1rem;
+  background: var(--Slide-color);
+  border-radius: 0.4rem;
+}
