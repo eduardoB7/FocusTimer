@@ -1,4 +1,4 @@
 node_modules
 
 
-.babelrc
+babel.config.json
